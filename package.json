@@ -1,15 +1,21 @@
 {
   "name": "hooked-on-react",
   "version": "1.0.0",
-  "description": "useful react hooks",
+  "description": "A collection of React hooks for rapid development and delightful UX.",
   "main": "dist/cjs/index.js",
   "files": [
     "dist"
   ],
   "types": "dist/index.d.ts",
   "scripts": {
+    "build": "npm run rollup && npm run build:types",
     "rollup": "rollup -c --bundleConfigAsCjs",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shan8851/hooked-on-react.git"
   },
   "author": "shan8851",
   "license": "MIT",
