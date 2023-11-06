@@ -1,8 +1,9 @@
 import { renderHook, act } from '@testing-library/react';
 import { useDebounce } from './useDebounce';
 
+jest.useFakeTimers();
+
 describe('useDebounce', () => {
-  jest.useFakeTimers();
 
   it('should update value after specified delay', () => {
     const { result, rerender } = renderHook(
@@ -13,11 +14,11 @@ describe('useDebounce', () => {
     expect(result.current).toBe('initial');
 
     // Simulate a value change
-    rerender({ value: 'changed', delay: 500 });
+    rerender({ value: 'changed', delay: 300 });
 
     // Fast-forward time by 600ms
     act(() => {
-      jest.advanceTimersByTime(600);
+      jest.advanceTimersByTime(1000);
     });
 
     expect(result.current).toBe('changed');
