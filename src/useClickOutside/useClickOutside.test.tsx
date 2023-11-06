@@ -7,7 +7,7 @@ describe('useClickOutside', () => {
       current: document.createElement('div'),
     };
     const mockCallback = jest.fn();
-    renderHook(() => useClickOutside(mockRef, mockCallback));
+    renderHook(() => useClickOutside({ ref:mockRef, callback:mockCallback }));
     document.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
     expect(mockCallback).toHaveBeenCalled();
   });
