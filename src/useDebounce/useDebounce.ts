@@ -30,3 +30,5 @@ export function useDebounce<T>({ value, delay, callback }: UseDebounceProps<T>):
 
   return debouncedValue;
 }
+
+export type { UseDebounceProps }
