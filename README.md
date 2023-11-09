@@ -1,12 +1,20 @@
-# Hooked on React
+# hooked-on-react
 
-A collection of React hooks for rapid development and delightful UX.
+A robust collection of fully type-safe React hooks designed to accelerate development and enrich user experience with open-source collaboration.
 
 ## Introduction
 
-`hooked-on-react` provides a suite of custom React hooks to solve common problems in modern web development, offering out-of-the-box functionality, performance optimizations, and best practices.
+`hooked-on-react` is an open-source library offering a suite of React hooks that address common development scenarios. The hooks provided by this library are crafted with type safety and best practices in mind, ensuring that they can be quickly integrated into any project to streamline development.
+
+## Quick Links
+
+- **Documentation Site**: For detailed usage and examples, visit the [hooked-on-react documentation](https://www.hooked-on-react.xyz/).
+- **Documentation Repo**: The [documentation repository](https://github.com/shan8851/hooked-on-react-docs) is where you can contribute to the project's documentation.
+- **GitHub Repo**: Check out the [source code on GitHub](https://github.com/shan8851/hooked-on-react).
 
 ## Installation
+
+To start using the hooks in your project, install the package using npm or yarn:
 
 ```bash
 npm install hooked-on-react
@@ -14,64 +22,21 @@ npm install hooked-on-react
 yarn add hooked-on-react
 ```
 
-## Hooks
+## Available Hooks
 
-Many more hooks are in the works! If you have a suggestion for a hook, please feel free to open an issue. I will also be launching a fully deatured documentation and demo site in due course.
+`hooked-on-react`` is continuously growing. Here are some hooks currently available:
 
-- useDebounce
-- useClickOutside
-
-## Usage
-
-#### useClickOutside
-
-Detect clicks outside a specified element. This is particularly useful for closing modal windows, dropdowns, or resetting states when the user clicks outside of a component.
-
-```jsx
-import { useRef } from 'react';
-import { useClickOutside } from 'hooked-on-react';
-
-const MyComponent = () => {
-  const ref = useRef();
-
-  useClickOutside(ref, () => {
-    // Your custom logic here
-    console.log('Clicked outside');
-  });
-
-  return <div ref={ref}>My Interactive Area</div>;
-};
-```
-#### useDebounce
-
-Debounce a value or a callback, which delays the execution until after a specified wait time. This hook is ideal for performing tasks like API calls in response to user input.
-
-```jsx
-import { useState } from 'react';
-import { useDebounce } from 'hooked-on-react';
-
-const SearchInput = () => {
-  const [value, setValue] = useState('');
-  const debouncedValue = useDebounce(value, 500);
-
-  // Use debouncedValue for API calls or expensive operations
-  // ...
-
-  return (
-    <input
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
-      placeholder="Search..."
-    />
-  );
-};
-
-```
+**useDebounce:** Delay execution of value changes to improve performance.
+**useClickOutside:** Respond to clicks outside a specified element, useful for modals and dropdowns.
+**useCopyText:** Copy text to the clipboard.
+**useLocalStorage:** Store, retrieve and delete values from local storage.
+... and many more to come!
 
 ## Contributing
 
-We welcome contributions to `hooked-on-react`! If you have suggestions or would like to contribute code, please feel free to make a pull request.
+Your contributions are welcome! Whether it's suggesting new hooks, reporting issues, or improving existing ones, feel free to open an issue or submit a pull request on GitHub. Enhancing the docs could be a great intro to open source for first time contributors. Head over to the [docs repo](https://github.com/shan8851/hooked-on-react-docs)  to get started.
 
 ## License
 
-hooked-on-react is available under the MIT License
+`hooked-on-react`` is made available under the MIT License. Feel free to use, modify, and distribute it as part of your open-source or commercial projects.
+
