@@ -1,14 +1,17 @@
 import { useState, useCallback } from 'react';
 
-interface useCopyTextReturn {
+interface UseCopyTextReturn {
   copiedText: string;
   isCopySuccess: boolean | null;
   copy: (text: string) => void;
+  error: Error | null;
 }
 
-export function useCopyText(): useCopyTextReturn {
+export function useCopyText(): UseCopyTextReturn {
   const [copiedText, setCopiedText] = useState<string>('');
   const [isCopySuccess, setIsCopySuccess] = useState<boolean | null>(null);
+  const [error, setError] = useState<Error | null>(null);
+
 
   const copy = useCallback(async (text: string) => {
     if (!navigator.clipboard) {
@@ -22,11 +25,15 @@ export function useCopyText(): useCopyTextReturn {
       setIsCopySuccess(true);
     } catch (error) {
       setIsCopySuccess(false);
-      console.error('Failed to copy:', error);
+       if (error instanceof Error) {
+          setError(error);
+        } else {
+          setError(new Error('An unknown error occurred.'));
+        }
     }
   }, []);
 
-  return { copiedText, isCopySuccess, copy };
+  return { copiedText, isCopySuccess, copy, error };
 }
 
-export type { useCopyTextReturn };
+export { UseCopyTextReturn };
