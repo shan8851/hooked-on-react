@@ -39,5 +39,5 @@ Your contributions are welcome! Whether it's suggesting new hooks, reporting iss
 
 ## License
 
-`hooked-on-react`` is made available under the MIT License. Feel free to use, modify, and distribute it as part of your open-source or commercial projects.
+`hooked-on-react` is made available under the MIT License. Feel free to use, modify, and distribute it as part of your open-source or commercial projects.
 
