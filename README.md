@@ -30,6 +30,7 @@ yarn add hooked-on-react
 **useClickOutside:** Respond to clicks outside a specified element, useful for modals and dropdowns.
 **useCopyText:** Copy text to the clipboard.
 **useLocalStorage:** Store, retrieve and delete values from local storage.
+**useCountdown:** Useful countdown timer providing ability to get he current time, add to it, subtract from it and more.
 ... and many more to come!
 
 ## Contributing
